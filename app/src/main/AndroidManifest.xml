@@ -13,10 +13,12 @@
         android:theme="@style/Theme.Asclepius"
         tools:targetApi="31" >
         <activity
-            android:name=".view.ResultActivity"
+            android:name="com.yalantis.ucrop.UCropActivity" />
+        <activity
+            android:name=".view.result.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.main.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

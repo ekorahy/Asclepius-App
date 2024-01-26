@@ -4,9 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    tools:context=".view.ResultActivity">
+    android:padding="16dp"
+    tools:context=".view.result.ResultActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:backgroundTint="@color/md_theme_primary"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -52,8 +50,9 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="300dp"
+                android:layout_gravity="center"
                 android:layout_margin="20dp"
                 app:cardCornerRadius="20dp">
 
@@ -121,7 +120,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/quicksand_light"
-                        tools:text="@string/high_score_value_sample" />
+                        tools:text="@string/score_percentage" />
                 </LinearLayout>
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
@@ -155,7 +154,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/quicksand_light"
-                        tools:text="@string/low_score_value_sample" />
+                        tools:text="@string/score_percentage" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

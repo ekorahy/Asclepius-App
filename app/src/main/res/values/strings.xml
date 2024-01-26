@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Asclepius</string>
+    <string name="select_image">Select Image</string>
+    <string name="analysis_now">Analysis Now</string>
+    <string name="news">News</string>
+    <string name="history">History</string>
+</resources>

@@ -4,4 +4,11 @@
     <string name="analysis_now">Analysis Now</string>
     <string name="news">News</string>
     <string name="history">History</string>
+    <string name="analysis_result">Analysis Result</string>
+    <string name="classified_as">classified as</string>
+    <string name="result_sample">Non Cancer</string>
+    <string name="high_score_label_sample">Non Cancer</string>
+    <string name="high_score_value_sample">75%</string>
+    <string name="low_score_label_sample">Cancer</string>
+    <string name="low_score_value_sample">25%</string>
 </resources>

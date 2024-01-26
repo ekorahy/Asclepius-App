@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Comfortaa -->
+    <font android:font="@font/comfortaa_light" />
+    <font android:font="@font/comfortaa_regular" />
+    <font android:font="@font/comfortaa_medium" />
+    <font android:font="@font/comfortaa_semibold" />
+    <font android:font="@font/comfortaa_bold" />
+
+    <!-- Roboto -->
+    <font android:font="@font/roboto_light" />
+    <font android:font="@font/roboto_regular" />
+    <font android:font="@font/roboto_medium" />
+    <font android:font="@font/roboto_bold" />
+
+    <!-- Quicksand -->
+    <font android:font="@font/quicksand_light" />
+    <font android:font="@font/quicksand_regular" />
+    <font android:font="@font/quicksand_medium" />
+    <font android:font="@font/quicksand_bold" />
+</font-family>

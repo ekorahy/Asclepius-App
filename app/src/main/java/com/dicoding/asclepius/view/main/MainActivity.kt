@@ -19,6 +19,7 @@ import com.dicoding.asclepius.helper.DateHelper
 import com.dicoding.asclepius.helper.ImageClassifierHelper
 import com.dicoding.asclepius.view.ViewModelFactory
 import com.dicoding.asclepius.view.history.HistoryActivity
+import com.dicoding.asclepius.view.news.NewsActivity
 import com.dicoding.asclepius.view.result.ResultActivity
 import com.yalantis.ucrop.UCrop
 import org.tensorflow.lite.task.vision.classifier.Classifications
@@ -49,6 +50,11 @@ class MainActivity : AppCompatActivity() {
             } ?: run {
                 showToast(getString(R.string.warning_no_photo_added))
             }
+        }
+
+        binding.btnNews.setOnClickListener {
+            val intent = Intent(this@MainActivity, NewsActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnHistory.setOnClickListener {

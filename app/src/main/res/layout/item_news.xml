@@ -18,7 +18,7 @@
             android:layout_width="80dp"
             android:layout_height="70dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/iv_placeholder" />
+            android:src="@drawable/iv_placeholder" />
 
         <LinearLayout
             android:layout_width="wrap_content"

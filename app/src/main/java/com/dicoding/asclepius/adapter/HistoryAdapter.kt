@@ -1,5 +1,6 @@
 package com.dicoding.asclepius.adapter
 
+import android.content.Intent
 import android.content.res.Resources
 import android.net.Uri
 import android.view.LayoutInflater
@@ -10,6 +11,13 @@ import com.dicoding.asclepius.R
 import com.dicoding.asclepius.database.History
 import com.dicoding.asclepius.databinding.ItemHistoryBinding
 import com.dicoding.asclepius.helper.HistoryDiffCallback
+import com.dicoding.asclepius.view.detailHistory.DetailHistoryActivity
+import com.dicoding.asclepius.view.detailHistory.DetailHistoryActivity.Companion.DATE
+import com.dicoding.asclepius.view.detailHistory.DetailHistoryActivity.Companion.HIGH_SCORE_LABEL
+import com.dicoding.asclepius.view.detailHistory.DetailHistoryActivity.Companion.HIGH_SCORE_VALUE
+import com.dicoding.asclepius.view.detailHistory.DetailHistoryActivity.Companion.IMG_SRC
+import com.dicoding.asclepius.view.detailHistory.DetailHistoryActivity.Companion.LOW_SCORE_LABEL
+import com.dicoding.asclepius.view.detailHistory.DetailHistoryActivity.Companion.LOW_SCORE_VALUE
 import com.dicoding.asclepius.view.history.HistoryViewModel
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
@@ -38,7 +46,14 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
         val resultStringFormat = holder.itemView.context.getString(R.string.analysis_history_result)
         holder.bind(history, resultStringFormat)
         holder.itemView.setOnClickListener {
-
+            val intent = Intent(holder.itemView.context, DetailHistoryActivity::class.java)
+            intent.putExtra(IMG_SRC, history.imgSrc)
+            intent.putExtra(HIGH_SCORE_LABEL, history.highScoreLabel)
+            intent.putExtra(HIGH_SCORE_VALUE, history.highScoreValue.toString())
+            intent.putExtra(LOW_SCORE_LABEL, history.lowScoreLabel)
+            intent.putExtra(LOW_SCORE_VALUE, history.lowScoreValue.toString())
+            intent.putExtra(DATE, history.date)
+            holder.itemView.context.startActivity(intent)
         }
     }
 

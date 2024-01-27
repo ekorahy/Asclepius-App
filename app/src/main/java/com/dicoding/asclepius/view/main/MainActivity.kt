@@ -23,6 +23,7 @@ import com.dicoding.asclepius.view.result.ResultActivity
 import com.yalantis.ucrop.UCrop
 import org.tensorflow.lite.task.vision.classifier.Classifications
 import java.io.File
+import java.time.LocalDate
 import java.time.LocalDateTime
 import kotlin.math.round
 import kotlin.random.Random
@@ -146,7 +147,7 @@ class MainActivity : AppCompatActivity() {
             highScoreValue = rounded(scoreList[0].toFloat()),
             lowScoreLabel = labelList[1],
             lowScoreValue = rounded(scoreList[1].toFloat()),
-            date = DateHelper.getCurrentDate()
+            date = LocalDate.now().toString()
         )
         mainViewModel.insert(history)
         val intent = Intent(this, ResultActivity::class.java)

@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="150dp">
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progressIndicator"
@@ -40,26 +41,38 @@
                 android:padding="16dp">
 
                 <TextView
-                    style="@style/TextAppearance.Material3.TitleLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/comfortaa_bold"
+                    android:textSize="20dp"
                     android:text="@string/app_name"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/md_theme_onPrimary" />
 
                 <View
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btnNews"
-                    style="@style/Widget.Material3.Button.Icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="@string/news"
-                    app:icon="@drawable/ic_news" />
+                    android:background="@drawable/cycle_button_style"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_news"
+                    app:tint="@color/md_theme_primary"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/btnHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/cycle_button_style"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_history"
+                    app:tint="@color/md_theme_primary"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             </LinearLayout>
 
@@ -71,7 +84,7 @@
             android:layout_height="300dp"
             android:layout_marginTop="200dp"
             android:background="@drawable/rounded_card_style"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/md_theme_onPrimary"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="16dp"
@@ -89,7 +102,7 @@
                 android:id="@+id/galleryButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
+                android:fontFamily="@font/roboto_regular"
                 android:layout_marginTop="10dp"
                 android:text="@string/select_image" />
 
@@ -99,25 +112,12 @@
             android:id="@+id/analyzeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
+            android:fontFamily="@font/roboto_regular"
             android:layout_marginTop="30dp"
             android:text="@string/analysis_now"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
-        <Button
-            android:id="@+id/btnHistory"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="@string/history"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/analyzeButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -13,4 +13,7 @@
     <string name="warning_no_photo_added">There is no photo that can be classified, please add it first.</string>
     <string name="name_file">image_%s_%d.jpg</string>
     <string name="photo_added">Photo added successfully</string>
+    <string name="analysis_history_result">%s %d\%%</string>
+    <string name="date_sample">2024/01/25 12:49:09</string>
+    <string name="empty_data">Your classification history appears here</string>
 </resources>

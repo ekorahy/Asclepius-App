@@ -11,19 +11,26 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
+import androidx.lifecycle.ViewModelProvider
 import com.dicoding.asclepius.R
+import com.dicoding.asclepius.database.History
 import com.dicoding.asclepius.databinding.ActivityMainBinding
+import com.dicoding.asclepius.helper.DateHelper
 import com.dicoding.asclepius.helper.ImageClassifierHelper
+import com.dicoding.asclepius.view.ViewModelFactory
+import com.dicoding.asclepius.view.history.HistoryActivity
 import com.dicoding.asclepius.view.result.ResultActivity
 import com.yalantis.ucrop.UCrop
 import org.tensorflow.lite.task.vision.classifier.Classifications
 import java.io.File
 import java.time.LocalDateTime
+import kotlin.math.round
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var imageClassifierHelper: ImageClassifierHelper
+    private lateinit var mainViewModel: MainViewModel
 
     private var currentImageUri: Uri? = null
 
@@ -31,6 +38,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        mainViewModel = obtainViewModel(this@MainActivity)
 
         binding.galleryButton.setOnClickListener { startGallery() }
         binding.analyzeButton.setOnClickListener {
@@ -41,6 +50,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnHistory.setOnClickListener {
+            val intent = Intent(this@MainActivity, HistoryActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     // Gallery
@@ -127,6 +140,15 @@ class MainActivity : AppCompatActivity() {
         labelList: ArrayList<String>,
         scoreList: ArrayList<String>
     ) {
+        val history = History(
+            imgSrc = imageUri.toString(),
+            highScoreLabel = labelList[0],
+            highScoreValue = rounded(scoreList[0].toFloat()),
+            lowScoreLabel = labelList[1],
+            lowScoreValue = rounded(scoreList[1].toFloat()),
+            date = DateHelper.getCurrentDate()
+        )
+        mainViewModel.insert(history)
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra(IMAGE_URI, imageUri.toString())
         intent.putExtra(LABEL_LIST, labelList)
@@ -134,8 +156,18 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun rounded(score: Float): Int {
+        val roundedScore = round(score * 100)
+        return roundedScore.toInt()
+    }
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun obtainViewModel(activity: AppCompatActivity): MainViewModel {
+        val factory = ViewModelFactory.getInstance(activity.application)
+        return ViewModelProvider(activity, factory)[MainViewModel::class.java]
     }
 
     companion object {

@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".view.result.ResultActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,42 +11,61 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
+            android:background="@drawable/rounded_bottom_style"
             android:backgroundTint="@color/md_theme_primary"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?android:attr/colorBackground"
-                android:padding="6dp"
-                android:src="@drawable/ic_arrow_back" />
-
-            <TextView
-                style="@style/TextAppearance.Material3.BodyMedium"
+            <LinearLayout
+                android:id="@+id/llAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:layout_marginStart="6dp"
-                android:text="@string/analysis_result" />
+                android:gravity="center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:background="@drawable/cycle_button_style" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/analysis_result"
+                    android:textColor="@color/md_theme_onPrimary" />
+            </LinearLayout>
 
         </LinearLayout>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_detection"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="100dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="300dp"
@@ -60,41 +78,42 @@
                     android:id="@+id/result_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/iv_placeholder"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/iv_placeholder" />
             </androidx.cardview.widget.CardView>
 
             <TextView
-                style="@style/TextAppearance.Material3.BodyMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/classified_as"
                 android:textAlignment="center"
-                android:text="@string/classified_as" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/result_text"
-                style="@style/TextAppearance.Material3.TitleLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:fontFamily="@font/roboto_bold"
-                android:textColor="@color/md_theme_primary"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/roboto_bold"
+                android:textAlignment="center"
+                android:textColor="@color/md_theme_primary"
+                android:textSize="30sp"
                 tools:text="@string/result_sample" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:layout_marginTop="24dp">
+                android:paddingEnd="20dp">
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
                     android:id="@+id/lpiHighScore"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:progress="75"/>
+                    tools:progress="75" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -103,10 +122,10 @@
 
                     <TextView
                         android:id="@+id/tvHighScoreLabel"
-                        style="@style/TextAppearance.Material3.BodyMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/quicksand_light"
+                        android:text="14sp"
                         tools:text="@string/high_score_label_sample" />
 
                     <View
@@ -116,10 +135,10 @@
 
                     <TextView
                         android:id="@+id/tvHighScoreValue"
-                        style="@style/TextAppearance.Material3.BodyMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/quicksand_light"
+                        android:textSize="14sp"
                         tools:text="@string/score_percentage" />
                 </LinearLayout>
 
@@ -128,19 +147,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    tools:progress="25"/>
+                    tools:progress="25" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="100dp">
 
                     <TextView
                         android:id="@+id/tvLowScoreLabel"
-                        style="@style/TextAppearance.Material3.BodyMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/quicksand_light"
+                        android:textSize="14sp"
                         tools:text="@string/low_score_label_sample" />
 
                     <View
@@ -150,10 +170,10 @@
 
                     <TextView
                         android:id="@+id/tvLowScoreValue"
-                        style="@style/TextAppearance.Material3.BodyMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/quicksand_light"
+                        android:textSize="14sp"
                         tools:text="@string/score_percentage" />
                 </LinearLayout>
             </LinearLayout>

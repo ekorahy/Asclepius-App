@@ -141,6 +141,11 @@ class MainActivity : AppCompatActivity() {
         labelList: ArrayList<String>,
         scoreList: ArrayList<String>
     ) {
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra(IMAGE_URI, imageUri.toString())
+        intent.putExtra(LABEL_LIST, labelList)
+        intent.putExtra(SCORE_LIST, scoreList)
+        startActivity(intent)
         val history = History(
             imgSrc = imageUri.toString(),
             highScoreLabel = labelList[0],
@@ -150,11 +155,6 @@ class MainActivity : AppCompatActivity() {
             date = LocalDate.now().toString()
         )
         mainViewModel.insert(history)
-        val intent = Intent(this, ResultActivity::class.java)
-        intent.putExtra(IMAGE_URI, imageUri.toString())
-        intent.putExtra(LABEL_LIST, labelList)
-        intent.putExtra(SCORE_LIST, scoreList)
-        startActivity(intent)
     }
 
     private fun rounded(score: Float): Int {

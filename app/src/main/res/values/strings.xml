@@ -25,4 +25,6 @@
     <string name="detail_news">Detail news</string>
     <string name="source">Source: %s</string>
     <string name="no_media">No media selected</string>
+    <string name="failed_to_load">Failed to load news.</string>
+    <string name="connection_problem">Problematic internet connection.</string>
 </resources>

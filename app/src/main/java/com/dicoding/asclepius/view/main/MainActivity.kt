@@ -119,7 +119,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onResult(results: List<Classifications>?) {
-                    showLoading(false)
                     runOnUiThread {
                         val labelList = ArrayList<String>()
                         val scoreList = ArrayList<String>()
@@ -137,6 +136,7 @@ class MainActivity : AppCompatActivity() {
                         }
                         moveToResult(labelList, scoreList)
                     }
+                    showLoading(false)
                 }
             }
         )

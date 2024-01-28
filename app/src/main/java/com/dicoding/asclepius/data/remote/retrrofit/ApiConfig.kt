@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.data.retrrofit
+package com.dicoding.asclepius.data.remote.retrrofit
 
 import com.yalantis.ucrop.BuildConfig
 import okhttp3.OkHttpClient

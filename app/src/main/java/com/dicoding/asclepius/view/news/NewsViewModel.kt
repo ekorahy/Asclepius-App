@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.data.response.ArticlesItem
-import com.dicoding.asclepius.data.response.NewsResponse
-import com.dicoding.asclepius.data.retrrofit.ApiConfig
-import com.dicoding.asclepius.helper.UiText
+import com.dicoding.asclepius.data.remote.response.ArticlesItem
+import com.dicoding.asclepius.data.remote.response.NewsResponse
+import com.dicoding.asclepius.data.remote.retrrofit.ApiConfig
+import com.dicoding.asclepius.utils.StringResourceFormatter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,8 +20,8 @@ class NewsViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     var isLoading: LiveData<Boolean> = _isLoading
 
-    private val _toastText = MutableLiveData<UiText>()
-    val toastText: LiveData<UiText> = _toastText
+    private val _toastText = MutableLiveData<StringResourceFormatter>()
+    val toastText: LiveData<StringResourceFormatter> = _toastText
 
     init {
         getNews()
@@ -39,13 +39,13 @@ class NewsViewModel : ViewModel() {
                         _news.value = response.body()?.articles
                     }
                 } else {
-                    _toastText.value = UiText.StringResource(R.string.failed_to_load)
+                    _toastText.value = StringResourceFormatter.StringResource(R.string.failed_to_load)
                 }
             }
 
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
                 _isLoading.value = false
-                _toastText.value = UiText.StringResource(R.string.connection_problem)
+                _toastText.value = StringResourceFormatter.StringResource(R.string.connection_problem)
             }
 
         })

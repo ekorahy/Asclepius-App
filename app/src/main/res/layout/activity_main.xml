@@ -1,126 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.main.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="150dp">
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/progressIndicator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="4dp"
-            android:indeterminate="true"
-            app:indicatorColor="@color/md_theme_primary"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:background="@drawable/rounded_bottom_style"
-            android:backgroundTint="@color/md_theme_primary"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:paddingBottom="16dp">
 
             <LinearLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="16dp">
+                android:layout_height="400dp"
+                android:background="@drawable/rounded_bottom_style"
+                android:backgroundTint="@color/md_theme_primary"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comfortaa_bold"
-                    android:textSize="20dp"
-                    android:text="@string/app_name"
-                    android:textColor="@color/md_theme_onPrimary" />
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa_bold"
+                        android:text="@string/app_name"
+                        android:textColor="@color/md_theme_onPrimary"
+                        android:textSize="20sp"
+                        tools:ignore="TextSizeCheck" />
 
-                <ImageButton
-                    android:id="@+id/btnNews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/cycle_button_style"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_news"
-                    app:tint="@color/md_theme_primary"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
 
-                <ImageButton
-                    android:id="@+id/btnHistory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/cycle_button_style"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_history"
-                    app:tint="@color/md_theme_primary"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    <ImageButton
+                        android:id="@+id/btnNews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cycle_button_style"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_news"
+                        app:tint="@color/md_theme_primary"
+                        android:contentDescription="@string/news_navigation"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                    <ImageButton
+                        android:id="@+id/btnHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/cycle_button_style"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_history"
+                        app:tint="@color/md_theme_primary"
+                        android:contentDescription="@string/history_navigation"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="200dp"
-            android:background="@drawable/rounded_card_style"
-            android:backgroundTint="@color/md_theme_onPrimary"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="16dp"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
             <ImageView
-                android:id="@+id/previewImageView"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:src="@drawable/iv_placeholder" />
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="-300dp"
+                android:src="@drawable/ic_logo"
+                android:contentDescription="@string/ic_logo"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/linearLayout3"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-200dp"
+                app:cardCornerRadius="20dp"
+                tools:ignore="TextSizeCheck">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="26dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/quicksand_light"
+                        android:text="@string/add_image_label"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/previewImageView"
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/iv_placeholder"
+                        android:contentDescription="@string/placeholder_image"
+                        tools:ignore="ImageContrastCheck" />
+
+                    <Button
+                        android:id="@+id/galleryButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/select_image" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/galleryButton"
+                android:id="@+id/analyzeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:fontFamily="@font/roboto_regular"
-                android:layout_marginTop="10dp"
-                android:text="@string/select_image" />
-
+                android:layout_marginTop="30dp"
+                android:enabled="false"
+                android:text="@string/analysis_now" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/analyzeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
-            android:layout_marginTop="30dp"
-            android:enabled="false"
-            android:text="@string/analysis_now"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+    </ScrollView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/md_theme_primary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

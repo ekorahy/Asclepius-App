@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.data.response.ArticlesItem
+import com.dicoding.asclepius.data.remote.response.ArticlesItem
 import com.dicoding.asclepius.databinding.ItemNewsBinding
 import com.dicoding.asclepius.view.detailNews.DetailNewsActivity
 import com.dicoding.asclepius.view.detailNews.DetailNewsActivity.Companion.AUTHOR

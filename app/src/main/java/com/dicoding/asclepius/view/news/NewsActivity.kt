@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.asclepius.adapter.NewsAdapter
-import com.dicoding.asclepius.data.response.ArticlesItem
+import com.dicoding.asclepius.data.remote.response.ArticlesItem
 import com.dicoding.asclepius.databinding.ActivityNewsBinding
 
 class NewsActivity : AppCompatActivity() {

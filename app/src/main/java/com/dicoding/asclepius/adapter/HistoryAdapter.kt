@@ -1,14 +1,13 @@
 package com.dicoding.asclepius.adapter
 
 import android.content.Intent
-import android.content.res.Resources
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.database.History
+import com.dicoding.asclepius.data.local.entity.history.History
 import com.dicoding.asclepius.databinding.ItemHistoryBinding
 import com.dicoding.asclepius.helper.HistoryDiffCallback
 import com.dicoding.asclepius.view.detailHistory.DetailHistoryActivity

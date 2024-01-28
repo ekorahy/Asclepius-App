@@ -1,6 +1,6 @@
-package com.dicoding.asclepius.data.retrrofit
+package com.dicoding.asclepius.data.remote.retrrofit
 
-import com.dicoding.asclepius.data.response.NewsResponse
+import com.dicoding.asclepius.data.remote.response.NewsResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -1,7 +1,7 @@
 package com.dicoding.asclepius.helper
 
 import androidx.recyclerview.widget.DiffUtil
-import com.dicoding.asclepius.database.History
+import com.dicoding.asclepius.data.local.entity.history.History
 
 class HistoryDiffCallback(private val oldHistoryList: List<History>, private val newHistoryList: List<History>): DiffUtil.Callback() {
     override fun getOldListSize(): Int = oldHistoryList.size

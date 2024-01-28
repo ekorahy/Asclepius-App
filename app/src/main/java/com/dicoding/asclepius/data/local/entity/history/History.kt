@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.database
+package com.dicoding.asclepius.data.local.entity.history
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

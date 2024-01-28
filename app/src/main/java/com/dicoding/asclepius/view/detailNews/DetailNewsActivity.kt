@@ -1,6 +1,5 @@
 package com.dicoding.asclepius.view.detailNews
 
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.net.toUri

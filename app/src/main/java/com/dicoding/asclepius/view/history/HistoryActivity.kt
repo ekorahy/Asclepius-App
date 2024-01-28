@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dicoding.asclepius.R
 import com.dicoding.asclepius.adapter.HistoryAdapter
 import com.dicoding.asclepius.databinding.ActivityHistoryBinding
 import com.dicoding.asclepius.view.ViewModelFactory
@@ -29,8 +28,8 @@ class HistoryActivity : AppCompatActivity() {
         historyViewModel.getAllHistory().observe(this) { historyList ->
             if (historyList.isNullOrEmpty()) {
                 binding?.apply {
-                    rvHistory?.visibility = View.GONE
-                    tvEmptyData?.visibility = View.VISIBLE
+                    rvHistory.visibility = View.GONE
+                    tvEmptyData.visibility = View.VISIBLE
                 }
             } else {
                 adapter.setListHistory(historyList)

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Asclepius</string>
+    <string name="add_image_label">*Please select the image you want to analyze.</string>
     <string name="select_image">Select</string>
     <string name="analysis_now">Analysis Now</string>
     <string name="news">News about cancer</string>
@@ -27,4 +28,10 @@
     <string name="no_media">No media selected</string>
     <string name="failed_to_load">Failed to load news.</string>
     <string name="connection_problem">Problematic internet connection.</string>
+
+    <!-- contentDescription -->
+    <string name="ic_logo">Logo icon image</string>
+    <string name="news_navigation">News navigation image</string>
+    <string name="history_navigation">History navigation image</string>
+    <string name="placeholder_image">Placeholder image</string>
 </resources>

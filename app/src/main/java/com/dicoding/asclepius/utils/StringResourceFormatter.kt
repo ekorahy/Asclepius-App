@@ -1,17 +1,17 @@
-package com.dicoding.asclepius.helper
+package com.dicoding.asclepius.utils
 
 import android.content.Context
 import androidx.annotation.StringRes
 
-sealed class UiText {
+sealed class StringResourceFormatter {
     data class DynamicString(
         val value: String
-    ) : UiText()
+    ) : StringResourceFormatter()
 
     class StringResource(
         @StringRes val resId: Int,
         vararg val args: Any
-    ) : UiText()
+    ) : StringResourceFormatter()
 
     fun asString(context: Context): String {
         return when (this) {

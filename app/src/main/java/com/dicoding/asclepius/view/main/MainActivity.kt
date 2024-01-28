@@ -13,7 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.asclepius.R
-import com.dicoding.asclepius.database.History
+import com.dicoding.asclepius.data.local.entity.history.History
 import com.dicoding.asclepius.databinding.ActivityMainBinding
 import com.dicoding.asclepius.helper.ImageClassifierHelper
 import com.dicoding.asclepius.view.ViewModelFactory

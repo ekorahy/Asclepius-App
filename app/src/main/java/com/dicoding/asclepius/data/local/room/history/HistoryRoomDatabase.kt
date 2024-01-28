@@ -1,9 +1,10 @@
-package com.dicoding.asclepius.database
+package com.dicoding.asclepius.data.local.room.history
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.dicoding.asclepius.data.local.entity.history.History
 
 @Database(entities = [History::class], version = 1)
 abstract class HistoryRoomDatabase: RoomDatabase() {

@@ -2,9 +2,9 @@ package com.dicoding.asclepius.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.dicoding.asclepius.database.History
-import com.dicoding.asclepius.database.HistoryDao
-import com.dicoding.asclepius.database.HistoryRoomDatabase
+import com.dicoding.asclepius.data.local.entity.history.History
+import com.dicoding.asclepius.data.local.room.history.HistoryDao
+import com.dicoding.asclepius.data.local.room.history.HistoryRoomDatabase
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 

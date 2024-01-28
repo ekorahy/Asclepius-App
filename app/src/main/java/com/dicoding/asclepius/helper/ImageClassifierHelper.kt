@@ -16,6 +16,7 @@ import org.tensorflow.lite.task.core.BaseOptions
 import org.tensorflow.lite.task.vision.classifier.Classifications
 import org.tensorflow.lite.task.vision.classifier.ImageClassifier
 import java.lang.IllegalStateException
+import kotlin.math.round
 
 
 class ImageClassifierHelper(

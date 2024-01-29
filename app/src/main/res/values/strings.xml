@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Asclepius</string>
     <string name="add_image_label">*Please select the image you want to analyze.</string>
     <string name="select_image">Select</string>
@@ -21,8 +21,8 @@
     <string name="author_sample">Malak Saleh</string>
     <string name="title_sample">MIT experts develop AI models that can detect pancreatic cancer early</string>
     <string name="desc_sample">Researchers at MIT’s CSAIL division\r\n, which focuses on computer engineering and AI development\r\n, built two machine learning algorithms that can detect pancreatic cancer at a higher threshold than current diagnostic standards. The two models together formed …</string>
-    <string name="url">https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_28efae2f-85c3-4715-a2bd-c5a1d35244e5</string>
-    <string name="publishedAt">2024-01-12T22:25:05Z</string>
+    <string name="url" tools:ignore="TypographyDashes">https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc–session_28efae2f-85c3-4715-a2bd-c5a1d35244e5</string>
+    <string name="publishedAt" tools:ignore="TypographyDashes">2024-01-12T22:25:05Z</string>
     <string name="detail_news">Detail news</string>
     <string name="source">Source: %s</string>
     <string name="no_media">No media selected</string>
@@ -34,4 +34,14 @@
     <string name="news_navigation">News navigation image</string>
     <string name="history_navigation">History navigation image</string>
     <string name="placeholder_image">Placeholder image</string>
+    <string name="ic_detection">Detection icon image</string>
+    <string name="ic_arrow_back">Arrow back icon image</string>
+    <string name="ic_history">History icon image</string>
+    <string name="ic_calender">Calender icon image</string>
+    <string name="ic_news">News icon image</string>
+    <string name="ic_author">Author icon image</string>
+    <string name="ic_source">Source icon image</string>
+    <string name="ic_delete">Delete icon image</string>
+    <string name="result_image">Result image</string>
+    <string name="news_image">News image</string>
 </resources>

@@ -17,7 +17,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -26,10 +26,7 @@
                 android:layout_height="200dp"
                 android:background="@drawable/rounded_bottom_style"
                 android:backgroundTint="@color/md_theme_primary"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/llAppBar"
@@ -37,13 +34,15 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables,UselessParent">
 
                     <ImageView
                         android:id="@+id/btnBack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/cycle_button_style"
+                        android:contentDescription="@string/ic_arrow_back"
                         android:padding="6dp"
                         android:src="@drawable/ic_arrow_back" />
 
@@ -63,25 +62,20 @@
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_gravity="end"
-                android:layout_marginTop="-100dp"
-                android:src="@drawable/ic_news"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="-120dp"
+                android:contentDescription="@string/ic_news"
+                android:src="@drawable/ic_news" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvArticles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-320dp"
+                android:layout_marginTop="-300dp"
                 android:layout_marginBottom="20dp"
                 android:overScrollMode="never"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:scrollbarSize="0dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 tools:listitem="@layout/item_news" />
         </LinearLayout>
     </ScrollView>
@@ -92,8 +86,8 @@
         android:layout_height="wrap_content"
         android:elevation="4dp"
         android:indeterminate="true"
-        app:indicatorColor="@color/md_theme_primary"
         android:visibility="gone"
+        app:indicatorColor="@color/md_theme_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

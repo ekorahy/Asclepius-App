@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="8dp"
+    app:cardCornerRadius="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
         android:layout_gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/ivNews"
             android:layout_width="80dp"
             android:layout_height="70dp"
+            android:contentDescription="@string/news_image"
             android:scaleType="centerCrop"
-            android:src="@drawable/iv_placeholder" />
+            android:src="@drawable/iv_placeholder"
+            tools:ignore="ImageContrastCheck" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -31,10 +34,10 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_sample"
-                android:fontFamily="@font/roboto_regular"
-                android:maxLines="2"
                 android:ellipsize="end"
+                android:fontFamily="@font/roboto_medium"
+                android:maxLines="2"
+                android:text="@string/title_sample"
                 android:textSize="16sp" />
 
             <TextView
@@ -45,7 +48,7 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/quicksand_light"
                 android:maxLines="1"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 tools:ignore="TextSizeCheck"
                 tools:text="@string/author_sample" />
 

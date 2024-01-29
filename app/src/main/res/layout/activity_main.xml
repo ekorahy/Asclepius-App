@@ -53,10 +53,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/cycle_button_style"
+                        android:contentDescription="@string/news_navigation"
                         android:padding="8dp"
                         android:src="@drawable/ic_news"
                         app:tint="@color/md_theme_primary"
-                        android:contentDescription="@string/news_navigation"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     <ImageButton
@@ -65,10 +65,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/cycle_button_style"
+                        android:contentDescription="@string/history_navigation"
                         android:padding="8dp"
                         android:src="@drawable/ic_history"
                         app:tint="@color/md_theme_primary"
-                        android:contentDescription="@string/history_navigation"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 </LinearLayout>
@@ -80,8 +80,8 @@
                 android:layout_height="300dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="-300dp"
-                android:src="@drawable/ic_logo"
-                android:contentDescription="@string/ic_logo"/>
+                android:contentDescription="@string/ic_logo"
+                android:src="@drawable/ic_logo" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/linearLayout3"
@@ -112,8 +112,8 @@
                         android:layout_width="250dp"
                         android:layout_height="250dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/iv_placeholder"
                         android:contentDescription="@string/placeholder_image"
+                        android:src="@drawable/iv_placeholder"
                         tools:ignore="ImageContrastCheck" />
 
                     <Button
@@ -133,9 +133,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/roboto_regular"
                 android:layout_marginTop="30dp"
                 android:enabled="false"
+                android:fontFamily="@font/roboto_regular"
                 android:text="@string/analysis_now" />
         </LinearLayout>
 
@@ -147,8 +147,8 @@
         android:layout_height="wrap_content"
         android:elevation="4dp"
         android:indeterminate="true"
-        app:indicatorColor="@color/md_theme_primary"
         android:visibility="gone"
+        app:indicatorColor="@color/md_theme_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

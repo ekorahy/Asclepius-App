@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/linearLayout4"
@@ -28,13 +28,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables,UselessParent">
 
                 <ImageView
                     android:id="@+id/btnBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/cycle_button_style"
+                    android:contentDescription="@string/ic_arrow_back"
                     android:padding="6dp"
                     android:src="@drawable/ic_arrow_back" />
 
@@ -55,6 +57,7 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_marginTop="50dp"
+            android:contentDescription="@string/ic_news"
             android:src="@drawable/ic_news"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +65,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="100dp"
             android:layout_marginBottom="20dp"
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -83,19 +86,21 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/roboto_medium"
                     android:maxLines="3"
-                    tools:text="@string/title_sample"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    tools:text="@string/title_sample" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
+                        android:contentDescription="@string/ic_author"
                         android:src="@drawable/ic_author" />
 
                     <TextView
@@ -115,18 +120,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_marginTop="16dp"
+                    android:contentDescription="@string/news_image"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/iv_placeholder" />
+                    android:src="@drawable/iv_placeholder"
+                    tools:ignore="ImageContrastCheck" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
+                        android:contentDescription="@string/ic_calender"
                         android:src="@drawable/ic_date" />
 
                     <TextView
@@ -146,11 +155,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
+                        android:contentDescription="@string/ic_source"
                         android:src="@drawable/ic_source" />
 
                     <TextView
@@ -171,8 +182,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/quicksand_medium"
-                    android:textSize="14sp"
                     android:justificationMode="inter_word"
+                    android:textSize="14sp"
                     tools:text="@string/desc_sample" />
 
             </LinearLayout>

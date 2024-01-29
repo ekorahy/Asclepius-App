@@ -9,7 +9,7 @@
     <ScrollView
         android:id="@+id/clContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,23 +72,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-300dp"
                 android:layout_marginBottom="20dp"
+                android:overScrollMode="never"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:visibility="visible"
+                android:scrollbarSize="0dp"
                 tools:listitem="@layout/item_history" />
-
-            <TextView
-                android:id="@+id/tvEmptyData"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="400dp"
-                android:layout_marginBottom="400dp"
-                android:fontFamily="@font/quicksand_regular"
-                android:text="@string/empty_data"
-                android:textAlignment="center"
-                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/tvEmptyData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_regular"
+        android:text="@string/empty_data"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/clContent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progressIndicator"

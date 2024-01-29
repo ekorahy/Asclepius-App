@@ -22,7 +22,10 @@ class NewsActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         binding.rvArticles.layoutManager = layoutManager
 
-        val newsViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[NewsViewModel::class.java]
+        val newsViewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.NewInstanceFactory()
+        )[NewsViewModel::class.java]
         newsViewModel.news.observe(this) { news ->
             setNewsData(news)
         }
@@ -47,6 +50,6 @@ class NewsActivity : AppCompatActivity() {
     }
 
     private fun showLoading(isLoading: Boolean) {
-        binding.progressIndicator.visibility = if(isLoading) View.VISIBLE else View.GONE
+        binding.progressIndicator.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 }

@@ -20,7 +20,7 @@ class HistoryRepository(application: Application) {
     fun getAllHistory(): LiveData<List<History>> = mHistoryDao.getAllHistory()
 
     fun insert(history: History) {
-        executorService.execute{ mHistoryDao.insert(history) }
+        executorService.execute { mHistoryDao.insert(history) }
     }
 
     fun deleteById(id: Int) {

@@ -17,7 +17,7 @@ sealed class StringResourceFormatter {
         return when (this) {
             is DynamicString -> value
             is StringResource -> context.getString(
-                resId , *args
+                resId, *args
             )
         }
     }

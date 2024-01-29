@@ -42,8 +42,7 @@
             android:exported="false" />
         <activity
             android:name=".view.main.MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.dicoding.asclepius.view.history.HistoryViewModel
 import com.dicoding.asclepius.view.main.MainViewModel
 
-class ViewModelFactory private constructor(private val mApplication: Application): ViewModelProvider.NewInstanceFactory() {
+class ViewModelFactory private constructor(private val mApplication: Application) :
+    ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

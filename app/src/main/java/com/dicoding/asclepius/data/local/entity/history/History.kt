@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 
 @Entity
 @Parcelize
-data class History (
+data class History(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Int = 0,
@@ -30,4 +30,4 @@ data class History (
 
     @ColumnInfo(name = "date")
     var date: String? = null
-): Parcelable
+) : Parcelable

@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.dicoding.asclepius.data.local.entity.history.History
 
 @Database(entities = [History::class], version = 1)
-abstract class HistoryRoomDatabase: RoomDatabase() {
+abstract class HistoryRoomDatabase : RoomDatabase() {
 
     abstract fun historyDao(): HistoryDao
 
@@ -19,8 +19,10 @@ abstract class HistoryRoomDatabase: RoomDatabase() {
         fun getDatabase(context: Context): HistoryRoomDatabase {
             if (INSTANCE == null) {
                 synchronized(HistoryRoomDatabase::class.java) {
-                    INSTANCE = Room.databaseBuilder(context.applicationContext,
-                        HistoryRoomDatabase::class.java, "test4")
+                    INSTANCE = Room.databaseBuilder(
+                        context.applicationContext,
+                        HistoryRoomDatabase::class.java, "history_db"
+                    )
                         .build()
                 }
             }

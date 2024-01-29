@@ -1,11 +1,10 @@
-package com.dicoding.asclepius.data.remote.retrrofit
+package com.dicoding.asclepius.data.remote.retrofit
 
-import com.yalantis.ucrop.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
+import com.dicoding.asclepius.BuildConfig
 
 class ApiConfig {
 
@@ -20,7 +19,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://newsapi.org/")
+                .baseUrl(BuildConfig.BASE_URL_NEWS)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

@@ -1,4 +1,4 @@
-package com.dicoding.asclepius.data.remote.retrrofit
+package com.dicoding.asclepius.data.remote.retrofit
 
 import com.dicoding.asclepius.data.remote.response.NewsResponse
 import retrofit2.Call

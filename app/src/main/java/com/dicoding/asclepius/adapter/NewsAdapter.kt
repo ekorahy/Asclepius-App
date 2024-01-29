@@ -18,7 +18,7 @@ import com.dicoding.asclepius.view.detailNews.DetailNewsActivity.Companion.PUBLI
 import com.dicoding.asclepius.view.detailNews.DetailNewsActivity.Companion.SOURCE_NAME
 import com.dicoding.asclepius.view.detailNews.DetailNewsActivity.Companion.TITLE
 
-class NewsAdapter: ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CALLBACK) {
+class NewsAdapter : ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -43,7 +43,9 @@ class NewsAdapter: ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CALL
             holder.itemView.context.startActivity(intent)
         }
     }
-    class MyViewHolder(private val binding: ItemNewsBinding): RecyclerView.ViewHolder(binding.root) {
+
+    class MyViewHolder(private val binding: ItemNewsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(news: ArticlesItem) {
             binding.tvTitle.text = news.title
             binding.tvAuthor.text = news.author
@@ -58,7 +60,7 @@ class NewsAdapter: ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CALL
     }
 
     companion object {
-        val DIFF_CALLBACK = object: DiffUtil.ItemCallback<ArticlesItem>() {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ArticlesItem>() {
             override fun areItemsTheSame(oldItem: ArticlesItem, newItem: ArticlesItem): Boolean {
                 return oldItem == newItem
             }
@@ -66,7 +68,6 @@ class NewsAdapter: ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CALL
             override fun areContentsTheSame(oldItem: ArticlesItem, newItem: ArticlesItem): Boolean {
                 return oldItem == newItem
             }
-
         }
     }
 }

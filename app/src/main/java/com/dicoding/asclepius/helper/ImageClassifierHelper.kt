@@ -16,7 +16,6 @@ import org.tensorflow.lite.task.core.BaseOptions
 import org.tensorflow.lite.task.vision.classifier.Classifications
 import org.tensorflow.lite.task.vision.classifier.ImageClassifier
 import java.lang.IllegalStateException
-import kotlin.math.round
 
 
 class ImageClassifierHelper(
@@ -53,7 +52,7 @@ class ImageClassifierHelper(
             setupImageClassifier()
         }
 
-        var imageProcessor = ImageProcessor.Builder()
+        val imageProcessor = ImageProcessor.Builder()
             .add(ResizeOp(224, 224, ResizeOp.ResizeMethod.NEAREST_NEIGHBOR))
             .add(CastOp(DataType.FLOAT32))
             .build()
@@ -63,6 +62,7 @@ class ImageClassifierHelper(
             val source = ImageDecoder.createSource(context.contentResolver, imageUri)
             ImageDecoder.decodeBitmap(source)
         } else {
+            @Suppress("DEPRECATION")
             MediaStore.Images.Media.getBitmap(context.contentResolver, imageUri)
         }.copy(Bitmap.Config.ARGB_8888, true)?.let { bitmap ->
             tensorImage = imageProcessor.process(TensorImage.fromBitmap(bitmap))

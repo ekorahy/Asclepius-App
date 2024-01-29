@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.dicoding.asclepius.data.local.entity.history.History
 import com.dicoding.asclepius.repository.HistoryRepository
 
-class MainViewModel(application: Application): ViewModel() {
+class MainViewModel(application: Application) : ViewModel() {
     private val mHistoryRepository: HistoryRepository = HistoryRepository(application)
 
     private val _currentImageUri = MutableLiveData<Uri?>(null)

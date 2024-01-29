@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.data.remote.response.ArticlesItem
 import com.dicoding.asclepius.data.remote.response.NewsResponse
-import com.dicoding.asclepius.data.remote.retrrofit.ApiConfig
+import com.dicoding.asclepius.data.remote.retrofit.ApiConfig
 import com.dicoding.asclepius.utils.StringResourceFormatter
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,13 +39,15 @@ class NewsViewModel : ViewModel() {
                         _news.value = response.body()?.articles
                     }
                 } else {
-                    _toastText.value = StringResourceFormatter.StringResource(R.string.failed_to_load)
+                    _toastText.value =
+                        StringResourceFormatter.StringResource(R.string.failed_to_load)
                 }
             }
 
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
                 _isLoading.value = false
-                _toastText.value = StringResourceFormatter.StringResource(R.string.connection_problem)
+                _toastText.value =
+                    StringResourceFormatter.StringResource(R.string.connection_problem)
             }
 
         })

@@ -9,7 +9,6 @@ import com.dicoding.asclepius.utils.DataFormatter
 import com.dicoding.asclepius.view.main.MainActivity.Companion.IMAGE_URI
 import com.dicoding.asclepius.view.main.MainActivity.Companion.LABEL_LIST
 import com.dicoding.asclepius.view.main.MainActivity.Companion.SCORE_LIST
-import kotlin.math.round
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
@@ -29,14 +28,18 @@ class ResultActivity : AppCompatActivity() {
         val highScorePercentage = String.format(scorePercentage, highScoreRounded)
         val lowScorePercentage = String.format(scorePercentage, lowScoreRounded)
 
-        binding.resultImage.setImageURI(imageUriString)
-        binding.resultText.text = labelList?.get(0)
-        binding.tvHighScoreLabel.text = labelList?.get(0)
-        binding.tvLowScoreLabel.text = labelList?.get(1)
-        binding.tvHighScoreValue.text = highScorePercentage
-        binding.tvLowScoreValue.text = lowScorePercentage
-        binding.lpiHighScore.progress = highScoreRounded
-        binding.lpiLowScore.progress = lowScoreRounded
-
+        with(binding) {
+            resultImage.setImageURI(imageUriString)
+            resultText.text = labelList?.get(0)
+            tvHighScoreLabel.text = labelList?.get(0)
+            tvLowScoreLabel.text = labelList?.get(1)
+            tvHighScoreValue.text = highScorePercentage
+            tvLowScoreValue.text = lowScorePercentage
+            lpiHighScore.progress = highScoreRounded
+            lpiLowScore.progress = lowScoreRounded
+            btnBack.setOnClickListener {
+                onBackPressedDispatcher.onBackPressed()
+            }
+        }
     }
 }

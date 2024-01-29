@@ -7,10 +7,6 @@ import com.bumptech.glide.Glide
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.databinding.ActivityDetailNewsBinding
 import com.dicoding.asclepius.utils.DataFormatter
-import java.time.Instant
-import java.time.LocalDateTime
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
 
 class DetailNewsActivity : AppCompatActivity() {
 
@@ -47,6 +43,9 @@ class DetailNewsActivity : AppCompatActivity() {
             tvPublishedAt.text = date
             tvSource.text = String.format(sourceFormat, sourceName)
             tvDesc.text = cleanDescription
+            btnBack.setOnClickListener {
+                onBackPressedDispatcher.onBackPressed()
+            }
         }
     }
 

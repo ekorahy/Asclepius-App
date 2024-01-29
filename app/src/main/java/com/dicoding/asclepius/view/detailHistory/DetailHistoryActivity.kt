@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.databinding.ActivityDetailHistoryBinding
-import kotlin.math.round
 
 class DetailHistoryActivity : AppCompatActivity() {
 
@@ -36,6 +35,9 @@ class DetailHistoryActivity : AppCompatActivity() {
             tvLowScoreLabel.text = lowScoreLabel
             tvLowScoreValue.text = lowScorePercentage
             tvDate.text = date
+            btnBack.setOnClickListener {
+                onBackPressedDispatcher.onBackPressed()
+            }
         }
     }
 

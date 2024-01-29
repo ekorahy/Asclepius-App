@@ -36,6 +36,10 @@ class HistoryActivity : AppCompatActivity() {
             }
         }
         adapter.setHistoryViewModel(historyViewModel)
+
+        binding?.btnBack?.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun obtainViewModel(activity: AppCompatActivity): HistoryViewModel {

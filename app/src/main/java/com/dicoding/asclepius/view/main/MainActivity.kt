@@ -26,7 +26,6 @@ import org.tensorflow.lite.task.vision.classifier.Classifications
 import java.io.File
 import java.time.LocalDate
 import java.time.LocalDateTime
-import kotlin.math.round
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -62,7 +61,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Gallery
     private fun startGallery() {
         launcherGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
     }
@@ -84,7 +82,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Crop image
     private val uCropContract = object : ActivityResultContract<List<Uri>, Uri>() {
         override fun createIntent(context: Context, input: List<Uri>): Intent {
             val inputUri = input[0]

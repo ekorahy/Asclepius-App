@@ -34,6 +34,10 @@ class NewsActivity : AppCompatActivity() {
         newsViewModel.toastText.observe(this) {
             Toast.makeText(this, it.asString(this), Toast.LENGTH_SHORT).show()
         }
+
+        binding.btnBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun setNewsData(news: List<ArticlesItem>) {

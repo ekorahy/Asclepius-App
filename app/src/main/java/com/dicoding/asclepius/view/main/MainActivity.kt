@@ -1,6 +1,5 @@
 package com.dicoding.asclepius.view.main
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +7,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
 import androidx.lifecycle.ViewModelProvider
@@ -75,33 +73,26 @@ class MainActivity : AppCompatActivity() {
                 filesDir,
                 String.format(nameFileFormat, dateAndTime, Random.nextInt(100) + 1)
             ).toUri()
-            val listUri = listOf(uri, outputImage)
-            cropImage.launch(listUri)
+            UCrop.of(uri, outputImage)
+                .withAspectRatio(5f, 5f)
+                .withMaxResultSize(1000, 1000)
+                .start(this)
         } else {
             showToast(getString(R.string.no_media))
         }
     }
 
-    private val uCropContract = object : ActivityResultContract<List<Uri>, Uri>() {
-        override fun createIntent(context: Context, input: List<Uri>): Intent {
-            val inputUri = input[0]
-            val outputUri = input[1]
-
-            val uCrop = UCrop.of(inputUri, outputUri)
-                .withAspectRatio(5f, 5f)
-                .withMaxResultSize(1000, 1000)
-
-            return uCrop.getIntent(context)
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
+            val resultUri = data?.let { UCrop.getOutput(it) }
+            resultUri?.let { mainViewModel.updateCurrentImageUri(it) }
+            showToast(getString(R.string.photo_added))
+        } else if (resultCode == UCrop.RESULT_ERROR) {
+            val cropError = data?.let { UCrop.getError(it) }
+            showToast(cropError.toString())
         }
-
-        override fun parseResult(resultCode: Int, intent: Intent?): Uri {
-            return UCrop.getOutput(intent!!)!!
-        }
-    }
-
-    private val cropImage = registerForActivityResult(uCropContract) { uri ->
-        mainViewModel.updateCurrentImageUri(uri)
-        showToast(getString(R.string.photo_added))
     }
 
     private fun analyzeImage() {

@@ -67,6 +67,7 @@
                 android:src="@drawable/ic_history" />
 
             <androidx.recyclerview.widget.RecyclerView
+                tools:visibility="gone"
                 android:id="@+id/rvHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,22 +86,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_regular"
+        android:background="@color/md_theme_onPrimary"
+        android:textColor="@color/md_theme_error"
+        android:padding="8dp"
         android:text="@string/empty_data"
         android:textAlignment="center"
         android:visibility="gone"
+        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/clContent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.progressindicator.LinearProgressIndicator
-        android:id="@+id/progressIndicator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="4dp"
-        android:indeterminate="true"
-        android:visibility="gone"
-        app:indicatorColor="@color/md_theme_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

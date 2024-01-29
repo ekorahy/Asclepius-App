@@ -13,7 +13,7 @@ interface HistoryDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(history: History)
 
-    @Query("SELECT * from history ORDER BY id ASC")
+    @Query("SELECT * from history ORDER BY id DESC")
     fun getAllHistory(): LiveData<List<History>>
 
     @Query("DELETE from history where id = :id")

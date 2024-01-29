@@ -6,6 +6,7 @@ import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.dicoding.asclepius.R
 import com.dicoding.asclepius.databinding.ActivityDetailNewsBinding
+import com.dicoding.asclepius.utils.DataFormatter
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -19,6 +20,8 @@ class DetailNewsActivity : AppCompatActivity() {
         binding = ActivityDetailNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val dateFormatter = DataFormatter()
+
         val title = intent.getStringExtra(TITLE)
         val author = intent.getStringExtra(AUTHOR)
         val imageString = intent.getStringExtra(IMAGE)
@@ -26,8 +29,8 @@ class DetailNewsActivity : AppCompatActivity() {
         val publishedAt = intent.getStringExtra(PUBLISHED_AT)
         val description = intent.getStringExtra(DESCRIPTION)
 
-        val cleanDescription = description?.let { cleanText(it) }
-        val date = publishedAt?.let { getDate(it) }
+        val cleanDescription = description?.let { dateFormatter.cleanText(it) }
+        val date = publishedAt?.let { dateFormatter.getDate(it) }
 
         val sourceFormat = getString(R.string.source)
 
@@ -45,23 +48,6 @@ class DetailNewsActivity : AppCompatActivity() {
             tvSource.text = String.format(sourceFormat, sourceName)
             tvDesc.text = cleanDescription
         }
-    }
-
-    private fun cleanText(text: String): String {
-        return text
-            .replace("\n", "")
-            .replace("\t", "")
-            .replace("\r", "")
-            .replace("\\n", "")
-            .replace("\\r", "")
-            .replace("\\t", "")
-    }
-
-    private fun getDate(dateAndTime: String): String {
-        val instant = Instant.parse(dateAndTime)
-        val localDateTime = LocalDateTime.ofInstant(instant, ZoneId.of("UTC"))
-        val outputDateFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-        return localDateTime.format(outputDateFormat)
     }
 
     companion object {

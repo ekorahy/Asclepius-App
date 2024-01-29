@@ -16,6 +16,7 @@ import com.dicoding.asclepius.R
 import com.dicoding.asclepius.data.local.entity.history.History
 import com.dicoding.asclepius.databinding.ActivityMainBinding
 import com.dicoding.asclepius.helper.ImageClassifierHelper
+import com.dicoding.asclepius.utils.DataFormatter
 import com.dicoding.asclepius.view.ViewModelFactory
 import com.dicoding.asclepius.view.history.HistoryActivity
 import com.dicoding.asclepius.view.news.NewsActivity
@@ -161,9 +162,9 @@ class MainActivity : AppCompatActivity() {
         val history = History(
             imgSrc = imageUriString,
             highScoreLabel = labelList[0],
-            highScoreValue = rounded(scoreList[0].toFloat()),
+            highScoreValue = DataFormatter().rounded(scoreList[0].toFloat()),
             lowScoreLabel = labelList[1],
-            lowScoreValue = rounded(scoreList[1].toFloat()),
+            lowScoreValue = DataFormatter().rounded(scoreList[1].toFloat()),
             date = LocalDate.now().toString()
         )
         mainViewModel.insert(history)
@@ -171,11 +172,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun showResult(imageUri: Uri?) {
         binding.previewImageView.setImageURI(imageUri)
-    }
-
-    private fun rounded(score: Float): Int {
-        val roundedScore = round(score * 100)
-        return roundedScore.toInt()
     }
 
     private fun showToast(message: String) {
